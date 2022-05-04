@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>滑动名片</title>
+	<style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgb(204, 212, 230);
+		}
+
+		.box {
+			position: relative;
+			width: 700px;
+			height: 400px;
+			border: 10px solid #fff;
+			background-color: rgb(120,140,200);
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		.words {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 200px;
+			height: 300px;
+			transition: all 1s 1s;
+			transform: translate(50%, -50%);
+		}
+		.words a {
+			color: #fff;
+			font-weight: 900;
+			font-size: 28px;
+			text-decoration: none;
+		}
+		.words h2 {
+			color: rgb(30,210,200);
+			opacity: 0;
+			transition: .5s 1s;
+		}
+		.box:hover h2 {
+			opacity: 1;
+		}
+		.words span {
+			color: #fff;
+			font-weight: 500;
+			font-size: 15px;
+			transition: .5s 1s;
+		}
+
+		/*圆柱图形样式*/
+		.columns {
+			display: flex;
+			position: absolute;
+    		right: -57px;
+    		top: -39px;
+			transform: rotate(34deg);
+		}
+		.d {
+			margin-right: 10px;
+			width: calc(var(--w)*40px);
+			height: calc(var(--h)*500px);
+			background-color: rgb(240,220,150);
+			border-radius: 100px;
+			transition: 1s calc(var(--w) * 0.5s);
+		}
+		.box:hover .d {
+			transform: translateY(-500px);
+		}
+		.box:hover .words {
+			left: 300px;
+		}
+		/*二维码*/
+		.qr-code {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 250px;
+			height: 250px;
+			background: url("./qr_code_img.jpg");
+			background-size: cover;
+			transform: translate(50px, -50%);
+			transition: 1.5s 1s;
+			opacity: 0;
+		}
+		.box:hover .qr-code {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="words">
+			<a href="#">时不待我</a>
+			<h2>Author：xiaoshi</h2>
+			<span>若这一世的缘尽于此，<br>若来生复为人身，<br>我期许我能好好的，<br>大家都能好好的，<br>这个世界也是好好的。
+			</span>
+		</div>
+		<div class="columns">
+			<div class="d" style="--i:1;--w:1.5;--h:0.8"></div>
+			<div class="d" style="--i:2;--w:1.6;--h:1"></div>
+			<div class="d" style="--i:3;--w:1.4;--h:0.6"></div>
+			<div class="d" style="--i:4;--w:1.7;--h:0.7"></div>
+			<div class="d" style="--i:5;--w:1.6;--h:0.5"></div>
+		</div>
+		<!-- 设置二维码 -->
+        <div class="qr-code"></div>
+	</div>
+</body>
+</html>
