@@ -1,0 +1,110 @@
+body,
+.sun,
+.moon {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	height: 100vh;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*白天*/
+.sun {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 600px;
+	background-color: orange;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+}
+/*黑夜*/
+.moon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 600px;
+	border-radius: 50%;
+	/*此处利用阴影画出月亮形状*/
+	box-shadow: 160px 180px 0 cyan;
+	transform: translate(calc(-50% - 160px), calc(-50% - 180px));
+}
+
+/*模拟大海*/
+.sea {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 35%;
+	backdrop-filter: blur(100px);
+	-webkit-backdrop-filter: blur(100px);
+	z-index: 100;
+}
+
+.sun,
+.moon,
+.sun-box,
+.moon-box,
+.bg {
+	transition: all 1s ease-in-out;
+}
+
+.sun-box,
+.moon-box {
+	position: relative;
+	overflow: hidden;
+}
+
+.light .sun-box {
+	height: 100%;
+}
+.light .moon-box {
+	height: 0;
+}
+.light .bg {
+	background-color: #ffeea2;
+}
+
+.dark .sun-box {
+	height: 0;
+}
+.dark .moon-box {
+	height: 100%;
+}
+.dark .bg {
+	background-color: #040720;
+}
+
+/*切换按钮样式*/
+.btn-box {
+	display: flex;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 10;
+}
+
+.btn-box div {
+	margin: 5px;
+	width: 90px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	background-color: rgba(255, 255, 255, .7);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn-box div:hover {
+	background-color: #fff;
+}
