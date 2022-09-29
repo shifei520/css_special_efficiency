@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background: 
+      linear-gradient(#03a9f4, #03a9f4),
+      linear-gradient(90deg, #fff 1px, transparent 1px, transparent 19px),
+      linear-gradient(#fff 1px, transparent 1px, transparent 19px),
+      linear-gradient(transparent, #2196f3);
+      background-size: 100% 1.5%,10% 100%, 100% 10%,100% 100%;
+      background-repeat: no-repeat, repeat, repeat, repeat;
+      background-position: 0 0, 0 0, 0 0, 0 0;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 1.5%, 0% 1.5%);
+      animation: move 2s linear infinite;
+    }
+    @keyframes move {
+      to{
+        background-position: 0 100%, 0 0, 0 0, 0 0;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>
