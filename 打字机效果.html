@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-size: 24px;
+      color: #7e2ea0;
+      font-weight: 600;
+    }
+
+
+    .typing {
+      width: 362px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #7E2EA0;
+      animation: typing 2s steps(15),
+      cursor 1s steps(15) infinite;
+    }
+
+    /* 打字机的步进动画 */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+
+    /* 光标闪烁动画 */
+    @keyframes cursor {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="typing">玉在椟中求善价，钗于奁内待时飞</div>
+</body>
+</html>
